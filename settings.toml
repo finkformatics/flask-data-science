@@ -1,0 +1,14 @@
+[general]
+model_path = './model/model.pickle'
+tf_idf_path = './model/tf_idf.pickle'
+data_path = './data/news.csv'
+
+[training]
+n_jobs = 8
+
+[training.model_params]
+C = 0.95
+class_weight = 'balanced'
+multi_class = 'multinomial'
+penalty = 'l2'
+solver = 'saga'
