@@ -4,3 +4,4 @@ pandas
 sklearn
 toml
 nltk
+uwsgi
