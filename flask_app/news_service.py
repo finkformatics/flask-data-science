@@ -9,6 +9,7 @@ class NewsService:
         self.predictor = NewsPredictor(self.settings)
 
         self.predictor.load_model(self.settings.model_path, self.settings.tf_idf_path)
+        self.predictor.text_processing.initialize_libraries()
 
     def predict(self, texts: List[str]) -> List[Dict[str, Any]]:
         return self.predictor.predict(texts)
