@@ -1,4 +1,4 @@
-from flask import request, jsonify
+from flask import request, jsonify, render_template
 from flask_app import app
 from settings import Settings
 
@@ -6,6 +6,11 @@ from .news_service import NewsService
 
 settings_instance = Settings.build_from_file('./settings.toml')
 news_service = NewsService(settings_instance)
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 @app.route('/api/v1/ping')
